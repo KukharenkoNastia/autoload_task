@@ -1,0 +1,17 @@
+{
+    "name": "nastya/docker_task",
+    "type": "autoload",
+    "autoload": {
+        "psr-4": {
+            "DockerTask\\": "public/"
+        }
+    },
+    "authors": [
+        {
+            "name": "KukharenkoNastia",
+            "email": "nastassia.kukharenka@innowise.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
