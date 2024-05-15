@@ -7,3 +7,14 @@ services:
       - "80:80"
     volumes:
       - ./:/var/www/html
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+#  phpserve:
+#    container_name: phpserve
+#    build: ./docker/php
+#      volumes:
+#        - ./:/var/www/html
+#      restart: unless-stopped
+#      extra_hosts:
+#        - "host.docker.internal:host-gateway"
