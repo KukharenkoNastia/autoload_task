@@ -3,7 +3,8 @@
     "type": "autoload",
     "autoload": {
         "psr-4": {
-            "DockerTask\\": "public/"
+            "DockerTask\\": "public/",
+            "App\\Mail\\": "public/Mail/"
         }
     },
     "authors": [
@@ -14,6 +15,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "psr/log": "^3.0@dev"
+        "psr/log": "^3.0@dev",
+        "phpmailer/phpmailer": "dev-master"
     }
 }
