@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   php:
     build:
@@ -7,18 +5,14 @@ services:
       dockerfile: Dockerfile
     ports:
       - "80:80"
-    depends_on:
-      - mysql
-#    volumes:
-#      - ./app:/var/www/html
+    volumes:
+      - ./:/var/www/html
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
-  mysql:
-    image: mysql:latest
-    environment:
-      MYSQL_ROOT_PASSWORD: test
-      MYSQL_DATABASE: test
-      MYSQL_USER: test
-      MYSQL_PASSWORD: test
-      SITE_URL: http://localhost
+  mailhog:
+    image: mailhog/mailhog:v1.0.1
+    container_name: mailhog
     ports:
-      - "3306:3306"
+      - "8025:8025"
+      - "1025:1025"
