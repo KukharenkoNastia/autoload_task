@@ -19,6 +19,5 @@
         "phpmailer/phpmailer": "dev-master"
     },
     "require-dev": {
-        "vimeo/psalm": "^6.0@dev"
     }
 }
