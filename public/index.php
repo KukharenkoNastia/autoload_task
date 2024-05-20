@@ -1,10 +1,11 @@
 <?php
 require __DIR__ . './../vendor/autoload.php';
 
-use App\Mail\EmailSendler;
+use App\Mail\EmailSender;
 use DockerTask\Classes\Bird;
 use DockerTask\Classes\Cat;
 use DockerTask\Classes\Dog;
+use App\Mail\EmailDecorator;
 
 use DockerTask\Classes\Logger;
 
@@ -25,11 +26,11 @@ $logger = new Logger('file', 'app.log');
 //$logger->log('error', 'This is an error message');
 //$logger->log('debug', 'This is a debug message');
 
-$mail = new EmailSendler();
+$mail = new EmailSender();
 
-$mail->send('khr.nastasia@gmail.com', 'hello');
-$mail->send('khr.nastasia@gmail.com', 'mlkml');
-$mail->send('khr.nastasia@gmail.com');
-//$mail->helloMail('khr.nastasia@gmail.com');
-//$mail->notificationMail('khr.nastasia@gmail.com');
+$decorator = new EmailDecorator($mail);
+
+$decorator->sendHello('khr.nastasia@gmail.com');
+$decorator->sendNotification('hghgh.jbjh@mail.com');
+
 ?>
